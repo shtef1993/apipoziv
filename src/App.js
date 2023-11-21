@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ApiNasa from "./komponente/apiNasa";
+import ApiPlanet from "./komponente/apiPlanet";
+import { Routes, Route, NavLink } from "react-router-dom";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="/ApiPlanet">ApiPlanet</NavLink>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <NavLink to="/ApiNasa">ApiNasa</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/ApiPlanet" element={<ApiPlanet />} />
+        <Route path="/ApiNasa" element={<ApiNasa />} />
+      </Routes>
     </div>
-  );
-}
+  )
+};
 
 export default App;
